@@ -1,0 +1,20 @@
+package com.utkuaksu.yuzbir_uygulamas
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.utkuaksu.yuzbir_uygulamas.databinding.ActivityMainBinding
+import com.utkuaksu.yuzbir_uygulamas.ui.PlayerSetupFragment
+
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        supportFragmentManager.beginTransaction()
+            .replace(binding.root.id, PlayerSetupFragment())
+            .commit()
+    }
+}

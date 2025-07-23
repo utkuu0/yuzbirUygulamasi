@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/playerFragment">
+
+    <!-- Player Setup Fragment -->
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.utkuaksu.yuzbir_uygulamas.ui.PlayerSetupFragment"
+        android:label="Player Setup" >
+
+        <!-- Örnek olarak buraya action ekleyebilirsin -->
+    </fragment>
+
+    <!-- Team Setup Fragment -->
+    <fragment
+        android:id="@+id/teamFragment"
+        android:name="com.utkuaksu.yuzbir_uygulamas.ui.TeamSetupFragment"
+        android:label="Team Setup" >
+
+        <!-- TeamFragment'tan GameFragment'a geçiş -->
+        <action
+            android:id="@+id/action_teamFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+
+    <!-- Game Fragment -->
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.utkuaksu.yuzbir_uygulamas.ui.GameFragment"
+        android:label="Game" >
+
+        <!-- Fragment argümanları -->
+        <argument
+            android:name="playerNames"
+            app:argType="string[]" />
+        <argument
+            android:name="isTeamMode"
+            app:argType="boolean" />
+    </fragment>
+</navigation>
