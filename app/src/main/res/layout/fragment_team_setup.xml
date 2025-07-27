@@ -1,90 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="24dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <data />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="@android:color/white">
 
         <!-- Takım 1 -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/etTeam1Name"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@android:color/holo_green_light"
-            android:padding="16dp"
-            android:elevation="4dp"
-            android:layout_marginBottom="24dp"
-            android:clipToPadding="false"
-            android:clipChildren="false">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Takım 1 Oyuncuları"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:layout_marginBottom="12dp" />
-
-            <EditText
-                android:id="@+id/etPlayer1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Oyuncu 1"
-                android:inputType="textPersonName"
-                android:layout_marginBottom="12dp" />
-
-            <EditText
-                android:id="@+id/etPlayer3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Oyuncu 2"
-                android:inputType="textPersonName" />
-        </LinearLayout>
+            android:hint="Takım 1 Adı"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:background="@drawable/bg_edit_text"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- Takım 2 -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/etTeam2Name"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@android:color/holo_blue_light"
-            android:padding="16dp"
-            android:elevation="4dp"
-            android:layout_marginBottom="24dp">
+            android:hint="Takım 2 Adı"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:background="@drawable/bg_edit_text"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/etTeam1Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="12dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Takım 2 Oyuncuları"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:layout_marginBottom="12dp" />
 
-            <EditText
-                android:id="@+id/etPlayer2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Oyuncu 1"
-                android:inputType="textPersonName"
-                android:layout_marginBottom="12dp" />
-
-            <EditText
-                android:id="@+id/etPlayer4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Oyuncu 2"
-                android:inputType="textPersonName" />
-        </LinearLayout>
-
-        <!-- Başla Butonu -->
+        <!-- Devam Et Butonu (YUKARI ALINDI) -->
         <Button
-            android:id="@+id/btnStartGame"
-            android:layout_width="match_parent"
+            android:id="@+id/btnContinue"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Oyuna Başla" />
+            android:text="Devam Et"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:backgroundTint="@color/green"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            app:cornerRadius="12dp"
+            app:layout_constraintTop_toBottomOf="@id/etTeam2Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    </LinearLayout>
-</ScrollView>
+        <!-- RecyclerView (ALTA ALINDI) -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewTeams"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:paddingTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/btnContinue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

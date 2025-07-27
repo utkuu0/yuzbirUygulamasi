@@ -1,6 +1,6 @@
 package com.utkuaksu.yuzbir_uygulamas.model
 
 data class Team(
-    val name: String,
-    var totalScore: Int = 0
+    var name: String,
+    var score: Int = 0
 )

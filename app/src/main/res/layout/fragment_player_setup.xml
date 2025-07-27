@@ -1,49 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/playerInputContainer"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="24dp"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
 
     <TextView
+        android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Kaç kişi oynayacak?"
-        android:textSize="30sp" />
-
-    <Spinner
-        android:id="@+id/spinner_player_count"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"/>
+        android:text="Kaç kişiyle oynanacak?"
+        android:textSize="20sp"
+        android:layout_marginBottom="16dp" />
 
     <LinearLayout
-        android:id="@+id/player_name_inputs"
-        android:orientation="vertical"
+        android:id="@+id/playerCountButtons"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <Switch
-        android:id="@+id/switch_team_mode"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
-        android:text="Takımlı Oynansın mı?"
-        android:visibility="gone"
-        android:layout_marginTop="16dp" />
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
 
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="48dp"
+            android:text="2 Kişi" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="48dp"
+            android:text="3 Kişi"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="48dp"
+            android:text="4 Kişi" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/playerNameContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
 
     <Button
-        android:id="@+id/btn_start_game"
-        android:layout_width="200dp"
+        android:id="@+id/continueButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="24dp"
-        android:text="Oyunu Başlat" />
+        android:text="Devam Et"
+        android:layout_marginTop="24dp" />
 
 </LinearLayout>

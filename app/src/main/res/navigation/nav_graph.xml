@@ -2,36 +2,53 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/playerFragment">
+    app:startDestination="@id/welcomeFragment">
+
+    <!-- Welcome Fragment (Giriş Ekranı) -->
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.utkuaksu.yuzbir_uygulamas.ui.WelcomeFragment"
+        android:label="Welcome">
+
+        <!-- Bireysel moda geçiş -->
+        <action
+            android:id="@+id/action_welcome_to_playerSetup"
+            app:destination="@id/playerSetupFragment" />
+
+        <!-- Takım moduna geçiş -->
+        <action
+            android:id="@+id/action_welcome_to_teamSetup"
+            app:destination="@id/teamSetupFragment" />
+    </fragment>
 
     <!-- Player Setup Fragment -->
     <fragment
-        android:id="@+id/playerFragment"
-        android:name="com.utkuaksu.yuzbir_uygulamas.ui.PlayerSetupFragment"
-        android:label="Player Setup" >
+        android:id="@+id/playerSetupFragment"
+        android:name="com.utkuaksu.yuzbir_uygulamas.ui.setup.fragment.PlayerSetupFragment"
+        android:label="Player Setup">
 
-        <!-- Örnek olarak buraya action ekleyebilirsin -->
+        <action
+            android:id="@+id/action_playerSetup_to_game"
+            app:destination="@id/gameFragment" />
     </fragment>
 
     <!-- Team Setup Fragment -->
     <fragment
-        android:id="@+id/teamFragment"
-        android:name="com.utkuaksu.yuzbir_uygulamas.ui.TeamSetupFragment"
-        android:label="Team Setup" >
+        android:id="@+id/teamSetupFragment"
+        android:name="com.utkuaksu.yuzbir_uygulamas.ui.setup.fragment.TeamSetupFragment"
+        android:label="Team Setup">
 
-        <!-- TeamFragment'tan GameFragment'a geçiş -->
         <action
-            android:id="@+id/action_teamFragment_to_gameFragment"
+            android:id="@+id/action_teamSetup_to_game"
             app:destination="@id/gameFragment" />
     </fragment>
 
     <!-- Game Fragment -->
     <fragment
         android:id="@+id/gameFragment"
-        android:name="com.utkuaksu.yuzbir_uygulamas.ui.GameFragment"
-        android:label="Game" >
+        android:name="com.utkuaksu.yuzbir_uygulamas.ui.game.GameFragment"
+        android:label="Game">
 
-        <!-- Fragment argümanları -->
         <argument
             android:name="playerNames"
             app:argType="string[]" />
